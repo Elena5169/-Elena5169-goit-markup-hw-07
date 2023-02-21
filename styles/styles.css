@@ -761,8 +761,11 @@ fill: currentColor;
         margin-bottom: 0px;
         flex-wrap: wrap;
          gap: 30px; 
-        flex-basis: calc((100%-30px) / 2); }
+        }
     
+    }
+    .team-item {
+        flex-basis: calc((100% - 30px) / 2);
     }
 
     @media screen and (min-width: 1200px) {
@@ -1061,7 +1064,7 @@ fill: currentColor;
     .modal {
         width: 528px;
        
-        padding-bottom: 60px;
+       
     }
 }
 
@@ -1100,6 +1103,9 @@ fill: currentColor;
     line-height: 1.5;
     letter-spacing: 0.03em;
     margin-bottom: 12px;
+}
+@media screen and (min-width: 1200px) {
+
 }
 .form-field {
     position: relative;
@@ -1170,8 +1176,6 @@ fill: currentColor;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-   
-   
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16;
@@ -1183,10 +1187,22 @@ fill: currentColor;
             font-size: 14px;
         }
     }
-.checkbox-input {
-    appearance: none;
-    
-}
+    .checkbox-label::before {
+        content: " ";
+        width: 16px;
+        height: 15px;
+        border: 1.5px solid #212121;
+        border-radius: 2px;
+        margin-right: 8px;
+    }
+    .checkbox-input:checked + .checkbox-label::before {
+        background-color: var(--accent-color);
+        border: none;
+        background-image: url(../images/CHECKed.svg);
+        background-position: center;
+        background-repeat: no-repeat ;
+    }
+
 .checkbox-icon {
     border: #212121 solid 2px;
     margin-right: 8px;
@@ -1233,7 +1249,7 @@ fill: currentColor;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: 40px;
+   
 }
 
 
@@ -1370,7 +1386,7 @@ address {
 }
 
 .subscribe-input {
-     width: 450px; 
+   
     margin-bottom: 20px;
     margin-right: 12px;
     height: 50px;
@@ -1390,6 +1406,11 @@ address {
    
     .subscribe-input {
         width: 200px;
+    }
+ }
+ @media screen and (min-width: 480px) {
+    .subscribe-input {
+        width: 450px;
     }
  }
  .subscribe-button {
@@ -1508,6 +1529,9 @@ address {
     .subscribe {
         margin-top: 60px;
         margin-bottom: 20px;
+    }
+    .subscribe-input {
+        width: 450px;
     }
     .subscribe-form {
         display: flex;
